@@ -13,14 +13,14 @@ object Problem009 {
 
   def pack[A](l: List[A]): List[List[A]] =
     l match {
-      case a +: b +: t if a == b => packAcc(Fill(a, 2), t)
-      case h +: t => List(h) +: pack(t)
+      case a :: b :: t if a == b => packAcc(Fill(a, 2), t)
+      case h :: t => List(h) +: pack(t)
       case Nil => Nil
     }
 
   private def packAcc[A](acc: Fill[A], l: List[A]): List[List[A]] =
     l match {
-      case h +: t if h == acc.elem => packAcc(acc + 1, t)
+      case h :: t if h == acc.elem => packAcc(acc + 1, t)
       case t => acc.toList +: pack(t)
     }
 
@@ -37,7 +37,7 @@ object Problem009 {
   def packSpan[A](l: List[A]): List[List[A]] =
     l match {
       case Nil => Nil
-      case h +: _ =>
+      case h :: _ =>
         val (pack, rest) = l.span(_ == h)
         pack +: packSpan(rest)
     }

@@ -4,8 +4,8 @@ object Problem008 {
 
   def compress[A](l: List[A]): List[A] =
     l match {
-      case a +: b +: t if a == b => compress(a +: t)
-      case h +: t => h +: compress(t)
+      case a :: b :: t if a == b => compress(a +: t)
+      case h :: t => h +: compress(t)
       case Nil => Nil
     }
 

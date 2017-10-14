@@ -4,7 +4,7 @@ object Problem007 {
 
   def flatten[A](ll: List[List[A]]): List[A] =
     ll match {
-      case hl +: t => hl ++ flatten(t)
+      case hl :: t => hl ++ flatten(t)
       case Nil => Nil
     }
 
@@ -19,8 +19,8 @@ object Problem007 {
 
   def flattenAny(ll: List[Any]): List[Any] =
     ll match {
-      case (h: List[_]) +: t => flattenAny(h) ++ flattenAny(t)
-      case h +: t => h +: flattenAny(t)
+      case (h: List[_]) :: t => flattenAny(h) ++ flattenAny(t)
+      case h :: t => h +: flattenAny(t)
       case l => l
     }
 
