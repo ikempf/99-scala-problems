@@ -10,7 +10,11 @@ class Problem007Test extends FlatSpec with Matchers {
   }
 
   "FlattenBis" should "flatten a randomly nested list structure" in {
-    flattenAny(List(List(1), List(List(2), List(3)), List(List(4, List(5))), List(List(List(6), 7)))) should equal(List(1, 2, 3, 4, 5, 6, 7))
+    flattenAny(
+      List(List(1),
+           List(List(2), List(3)),
+           List(List(4, List(5))),
+           List(List(List(6), 7)))) should equal(List(1, 2, 3, 4, 5, 6, 7))
   }
 
 }

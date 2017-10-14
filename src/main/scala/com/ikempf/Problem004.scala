@@ -10,8 +10,8 @@ object Problem004 {
   @tailrec
   private def lengthR(l: List[_], length: Int): Int =
     l match {
-      case _ :: t => lengthR(t, length + 1)
-      case _ => length
+      case _ :: t ⇒ lengthR(t, length + 1)
+      case _      ⇒ length
     }
 
 }

@@ -5,9 +5,9 @@ object Problem016 {
   def drop[A](n: Int, l: List[A]): List[A] = {
     def dropBis(m: Int, l: List[A]): List[A] =
       (m, l) match {
-        case (_, Nil) => Nil
-        case (1, _ :: t) => dropBis(n, t)
-        case (_, h :: t) => h +: dropBis(m - 1, t)
+        case (_, Nil)    ⇒ Nil
+        case (1, _ :: t) ⇒ dropBis(n, t)
+        case (_, h :: t) ⇒ h +: dropBis(m - 1, t)
       }
 
     dropBis(n, l)
@@ -18,13 +18,15 @@ object Problem016 {
 
   def dropEasy2[A](n: Int, l: List[A]): List[A] =
     l.grouped(n).toList.flatMap {
-      case group if group.length < n => group
-      case group => group.init
+      case group if group.length < n ⇒ group
+      case group                     ⇒ group.init
     }
 
   def dropEasy3[A](n: Int, l: List[A]): List[A] =
-    l.zipWithIndex.filter {
-      case (_, i) => (i + 1) % n != 0
-    }.map(_._1)
+    l.zipWithIndex
+      .filter {
+        case (_, i) ⇒ (i + 1) % n != 0
+      }
+      .map(_._1)
 
 }

@@ -17,20 +17,20 @@ object Problem019 {
 
   private def rotateLeft[A](n: Int, start: List[A], end: List[A]): List[A] =
     (n, start) match {
-      case (0, _) => start ++ end
-      case (_, Nil) => Nil
-      case (_, h :: t) => rotateLeft(n - 1, t, end :+ h)
+      case (0, _)      ⇒ start ++ end
+      case (_, Nil)    ⇒ Nil
+      case (_, h :: t) ⇒ rotateLeft(n - 1, t, end :+ h)
     }
 
   def rotateSplit[A](n: Int, l: List[A]): List[A] = {
-    val leftN = asSingleLeftRotation(n, l.length)
+    val leftN        = asSingleLeftRotation(n, l.length)
     val (start, end) = l.splitAt(leftN)
     end ++ start
   }
 
   def rotateFold[A](n: Int, l: List[A]): List[A] = {
     val leftN = asSingleLeftRotation(n, l.length)
-    l.splitAt(leftN).bifoldLeft(List.empty[A])(_ ++ _, (c, end) => end ++ c)
+    l.splitAt(leftN).bifoldLeft(List.empty[A])(_ ++ _, (c, end) ⇒ end ++ c)
   }
 
 }
