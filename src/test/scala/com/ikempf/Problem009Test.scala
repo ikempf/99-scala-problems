@@ -13,6 +13,7 @@ class Problem009Test extends FlatSpec with Matchers {
            List('a, 'a),
            List('d),
            List('e, 'e, 'e, 'e)))
+
     packFold(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) should equal(
       List(List('a, 'a, 'a, 'a),
            List('b),
@@ -20,6 +21,7 @@ class Problem009Test extends FlatSpec with Matchers {
            List('a, 'a),
            List('d),
            List('e, 'e, 'e, 'e)))
+
     packSpan(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) should equal(
       List(List('a, 'a, 'a, 'a),
            List('b),
