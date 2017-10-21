@@ -1,6 +1,10 @@
 package com.ikempf.lists
 
-import com.ikempf.lists.Problem023.{randomSelect, randomSelectDistinct, randomSelectDistinctNonRecursive}
+import com.ikempf.lists.Problem023.{
+  randomSelect,
+  randomSelectDistinct,
+  randomSelectDistinctNonRecursive
+}
 import org.scalatest.{FlatSpec, Matchers}
 
 class Problem023Test extends FlatSpec with Matchers {

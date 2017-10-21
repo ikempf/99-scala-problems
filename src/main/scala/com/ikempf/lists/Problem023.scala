@@ -8,7 +8,7 @@ object Problem023 {
 
   def randomSelect[A](n: Int, l: List[A]): List[A] =
     Range(0, n)
-      .map(_ => Random.nextInt(l.length))
+      .map(_ ��� Random.nextInt(l.length))
       .map(l.apply)
       .toList
 
@@ -24,12 +24,12 @@ object Problem023 {
     val elementsToDrop = l.length - 1 - n
 
     val decreasingListSize = Range(0, elementsToDrop)
-      .scanLeft(l.length - 1)((acc, _) => acc - 1)
+      .scanLeft(l.length - 1)((acc, _) ��� acc - 1)
       .toList
 
     decreasingListSize
       .map(Random.nextInt)
-      .foldLeft(l)((acc, rand) => removeAt(rand, acc)._1)
+      .foldLeft(l)((acc, rand) ��� removeAt(rand, acc)._1)
   }
 
 }
