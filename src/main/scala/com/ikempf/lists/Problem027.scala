@@ -12,13 +12,12 @@ object Problem027 {
       lMinusC3 = lMinusC2.filterNot(c3.contains)
     } yield (c2, c3, lMinusC3)
 
-  def group[A](sizes: List[Int], l: List[A]): List[List[List[A]]] = {
+  def group[A](sizes: List[Int], l: List[A]): List[List[List[A]]] =
     sizes match {
       case Nil ⇒ Nil
       case h :: t ⇒
         combinations(h, l)
-          .flatMap(combination ��� group(t, l.filterNot(combination.contains)).map(combination +: _))
+          .flatMap(combination ⇒ group(t, l.filterNot(combination.contains)).map(combination +: _))
     }
-  }
 
 }
